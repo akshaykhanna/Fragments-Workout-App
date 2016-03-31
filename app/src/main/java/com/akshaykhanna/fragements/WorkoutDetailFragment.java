@@ -48,8 +48,17 @@ public class WorkoutDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        workoutId=1;
+       // workoutId=1;
+        if(savedInstanceState!=null)
+        {
+            workoutId=savedInstanceState.getInt("workoutId");
+        }
         return inflater.inflate(R.layout.fragment_workout_detail, container, false);
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("workoutId",workoutId);
+    }
 }
