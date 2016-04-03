@@ -17,4 +17,8 @@
         android:text="New Text"
         android:id="@+id/tv_frag_detail_desc" />
 
+    <FrameLayout
+        android:id="@+id/stopwatch_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

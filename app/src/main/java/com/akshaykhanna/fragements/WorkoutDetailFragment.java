@@ -1,6 +1,7 @@
 package com.akshaykhanna.fragements;
 
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -52,6 +53,15 @@ public class WorkoutDetailFragment extends Fragment {
         if(savedInstanceState!=null)
         {
             workoutId=savedInstanceState.getInt("workoutId");
+        }
+        else
+        {
+            FragmentTransaction ft=getChildFragmentManager().beginTransaction();
+            StopwatchFragment sf=new StopwatchFragment();
+            ft.replace(R.id.stopwatch_container,sf);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
         }
         return inflater.inflate(R.layout.fragment_workout_detail, container, false);
     }

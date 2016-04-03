@@ -28,11 +28,15 @@ public class MainActivity extends Activity implements WorkoutListFragment.Workou
             Toast.makeText(this,"Tablet Screen",Toast.LENGTH_SHORT).show();
             WorkoutDetailFragment fragDetail=new WorkoutDetailFragment();
             FragmentTransaction ft=getFragmentManager().beginTransaction();
-            fragDetail.setWorkoutId((int)id);
-            ft.replace(R.id.fragment_container,fragDetail);
+            fragDetail.setWorkoutId((int) id);
+            ft.replace(R.id.fragment_container, fragDetail);
             ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
+            //DetailActivity da=new DetailActivity();
+
+
+
         }
         else
         {
@@ -43,4 +47,5 @@ public class MainActivity extends Activity implements WorkoutListFragment.Workou
         }
 
     }
+
 }
